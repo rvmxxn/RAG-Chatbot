@@ -7,6 +7,7 @@ langchain-community
 langchain-text-splitters
 langchain-chroma
 chromadb == 0.4.24
+pydantic<2
 numpy
 pypdf
 requests
