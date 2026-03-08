@@ -10,6 +10,8 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
+from pypdf import PdfReader
+
 
 load_dotenv()
 st.set_page_config(page_title="📄 RAG Chatbot")
