@@ -113,7 +113,7 @@ if "chat_history" not in st.session_state:
 def get_history(session_id: str):
   if session_id not in st.session_state["chat_history"]:
     st.session_state["chat_history"][session_id] = ChatMessageHistory()
-    return st.session_state["chat_history"][session_id]
+  return st.session_state["chat_history"][session_id]
 
 session_id = st.text_input("🫆 Session ID", value="default_session")
 user_q = st.chat_input("💬 Ask a question about the document(s). ")
@@ -134,7 +134,7 @@ if user_q:
   context_str = _join_docs(docs)
 
   qa_msgs = qa_prompt.format_messages(chat_history= history.messages,
-                                      input=user_q,
+                                      question=user_q,
                                       context=context_str
                                       )
   answer = llm.invoke(qa_msgs).content
